@@ -5,14 +5,16 @@ plugins {
 group 'pp5creditcard-gradle'
 version '1.0'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation 'javax.inject:javax.inject:1'
+    implementation 'org.springframework.boot:spring-boot-starter-parent:2.2.1.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE'
+    implementation 'io.springfox:springfox-swagger2:2.1.0'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 
     compileOnly 'org.projectlombok:lombok:1.18.10'
 
