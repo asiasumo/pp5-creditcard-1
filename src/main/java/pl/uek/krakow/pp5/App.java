@@ -1,18 +1,11 @@
 package pl.uek.krakow.pp5;
 
-import pl.uek.krakow.pp5.models.CreditCard;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.math.BigDecimal;
-
+@SpringBootApplication
 public class App {
 	public static void main(String args[]) {
-		CreditCard card = CreditCard.builder()
-				.cardNumber("1234")
-				.limit(BigDecimal.valueOf(100))
-				.balance(BigDecimal.valueOf(100))
-				.build();
-		card.setLimit(BigDecimal.valueOf(200));
-		card.withdraw(BigDecimal.valueOf(50));
-		System.out.println(card.getTranslationLogger().getLogs());
+		SpringApplication.run(App.class, args);
 	}
 }
