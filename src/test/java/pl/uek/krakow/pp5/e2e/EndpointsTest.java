@@ -1,4 +1,4 @@
-package pl.uek.krakow.pp5.models.e2e;
+package pl.uek.krakow.pp5.e2e;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,8 +9,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import pl.uek.krakow.pp5.models.CreditCardFacade;
 import pl.uek.krakow.pp5.models.dto.CardBalanceDto;
+import pl.uek.krakow.pp5.services.CreditCardFacade;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,6 +24,8 @@ public class EndpointsTest {
 	@Autowired
 	TestRestTemplate http;
 
+	@Autowired
+	CreditCardFacade creditCardFacade;
 
 	@Test
 	public void itListsCardBalances() {

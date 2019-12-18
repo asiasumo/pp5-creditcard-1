@@ -1,14 +1,13 @@
 package pl.uek.krakow.pp5.rest;
 
+import io.swagger.models.Response;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.uek.krakow.pp5.models.CreditCardFacade;
 import pl.uek.krakow.pp5.models.commands.WithdrawCommand;
 import pl.uek.krakow.pp5.models.dto.CardBalanceDto;
+import pl.uek.krakow.pp5.services.CreditCardFacade;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,15 +20,11 @@ public class CreditCardReportingController {
 
 	@GetMapping("/balances")
 	public List<CardBalanceDto> cardsBalances() {
-		return Arrays.asList(
-				new CardBalanceDto("1234", BigDecimal.valueOf(1000)),
-				new CardBalanceDto("1234-1234", BigDecimal.valueOf(2000)),
-				new CardBalanceDto("1234-1234", BigDecimal.valueOf(3000))
-		);
+		return api.getAll();
 	}
 
 	@PostMapping("/withdraw")
-	public WithdrawCommand withdraw(@RequestBody WithdrawCommand command) {
-		return command;
+	public Response withdraw(@RequestBody WithdrawCommand command) {
+		return null;
 	}
 }
